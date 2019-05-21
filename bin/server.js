@@ -6,6 +6,8 @@ const http = require('http');
 const debug = require('debug')('testenode:server');
 /** */
 const express = require('express');
+
+const bodyParser = require('body-parser');
 /** 
 const config = required('../config/config.json');
 */

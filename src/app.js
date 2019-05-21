@@ -12,9 +12,11 @@ const Livros = require('./models/livros');
 
 // Carrega as Rotas
 const indexRoute = require('./routes/index');
+const livroRoute = require('./routes/livro-route');
 
 //ROTAS
 app.use('/', indexRoute);
+app.use('/', livroRoute);
 
 module.exports = app;
 

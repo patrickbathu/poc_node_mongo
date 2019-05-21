@@ -1,5 +1,7 @@
 const express = require('express');
 
+const bodyParser = require('body-parser');
+
 const mongoose = require('mongoose');
 
 const config = require('./config');
@@ -17,6 +19,14 @@ const Livros = require('./models/livros');
 // Carrega as Rotas
 const indexRoute = require('./routes/index');
 const livroRoute = require('./routes/livro-route');
+
+app.use(bodyParser.json({
+	limit: '5mb'
+}));
+
+app.use(bodyParser.urlencoded({
+	extended: false
+}));
 
 //ROTAS
 app.use('/v1', indexRoute);

@@ -4,12 +4,17 @@ const app = express();
 
 const routes = express.Router();
 
-//ROTAS
-const index = require('./routes/index');
-const livro = require('./routes/livroRoute');
+// Connecta ao banco
+mongoose.connect(config.connectionString);
 
-app.use('/', index);
-app.use('/livros', livro);
+// Carrega os Models
+const Livros = require('./models/livros');
+
+// Carrega as Rotas
+const indexRoute = require('./routes/index');
+
+//ROTAS
+app.use('/', indexRoute);
 
 module.exports = app;
 

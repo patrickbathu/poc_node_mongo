@@ -1,5 +1,9 @@
 const express = require('express');
 
+const mongoose = require('mongoose');
+
+const config = require('./config');
+
 const app = express();
 
 const routes = express.Router();
@@ -15,8 +19,8 @@ const indexRoute = require('./routes/index');
 const livroRoute = require('./routes/livro-route');
 
 //ROTAS
-app.use('/', indexRoute);
-app.use('/', livroRoute);
+app.use('/v1', indexRoute);
+app.use('/v1/livro', livroRoute);
 
 module.exports = app;
 

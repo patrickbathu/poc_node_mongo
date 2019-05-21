@@ -1,12 +1,11 @@
+'use strict';
+
 const express = require('express');
+
+const controller = require('../controllers/index');
 
 const router = express.Router();
 
-router.get('/', function(req, res, next){
-    res.status(200).send({
-        title : "Node",
-        version : "0.0.1"
-    });
-});
+router.get('/', controller.get);
 
 module.exports = router;

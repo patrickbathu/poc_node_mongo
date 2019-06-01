@@ -8,33 +8,12 @@ const debug = require('debug')('testenode:server');
 const express = require('express');
 
 const bodyParser = require('body-parser');
-/** 
-const config = required('../config/config.json');
-*/
+
 /** */
 const app = require('../src/app')
 
+const PORT = 3000;
 
-const port = '3000';
+const HOST = '0.0.0.0';
 
-function normalizaPort(val){
-    const port = parseInt(val , 10);
-    if(isNaN(port)){
-        return val;
-    }
-
-    if(port <= 0){
-        return port;
-    }
-
-    return false;
-}
-
-/**
-var app = express();
- */
-
-app.listen(port, function() {
-    console.log('app listening on port ${port}')
-});
-
+app.listen(PORT, HOST);

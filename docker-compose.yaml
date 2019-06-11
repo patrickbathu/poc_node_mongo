@@ -1,16 +1,6 @@
-version: '3.1'
+version: '3'
 
 services:
-  mongo:
-    image: mongo
-    ports:
-      - "27017:27017"
-    restart: always
-  mongo-express:
-    image: mongo-express
-    restart: always
-    ports:
-      - "8085:8085"
   app:
     build: .
     command: npm start
@@ -18,3 +8,4 @@ services:
       - "3000:3000"
     volumes:
       - .:/usr/app
+    depends_on

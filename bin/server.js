@@ -12,8 +12,8 @@ const bodyParser = require('body-parser');
 /** */
 const app = require('../src/app')
 
-const PORT = 3000;
+const port = '3000';
 
-const HOST = '0.0.0.0';
-
-app.listen(PORT, HOST);
+app.listen(port, function(){
+    console.log('app rodando na porta 3000');
+});

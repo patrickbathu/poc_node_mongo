@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 //ROTAS
-app.use('/v1', indexRoute);
+app.use('/', indexRoute);
 app.use('/v1/livro', livroRoute);
 
 module.exports = app;

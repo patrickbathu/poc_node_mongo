@@ -1,0 +1,16 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "env": {
+  },
+  "formation": {
+  },
+  "name": "poc_node_mongo",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}

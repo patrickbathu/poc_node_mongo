@@ -1,16 +1,7 @@
 {
-  "addons": [
-
-  ],
-  "buildpacks": [
-
-  ],
-  "env": {
-  },
-  "formation": {
-  },
+  "image": "heroku/nodejs",
+  "repository": "https://github.com/patrickbathu/poc_node_mongo.git",
   "name": "poc_node_mongo",
-  "scripts": {
-  },
-  "stack": "heroku-18"
+  "keywords": ["node", "mongoose", "ODM"],
+  "addons": ["mongolab"]
 }

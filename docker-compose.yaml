@@ -1,11 +1,30 @@
 version: '3'
 
 services:
-  app:
-    build: .
-    command: npm start
-    ports: 
-      - "3000:3000"
+  mysqlsrv:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "MySql2019!"
+      MYSQL_DATABASE: "testedb"
+    ports:
+      - "3306:3306"
     volumes:
-      - .:/usr/app
-    depends_on
+      - /home/renatogroffe/Desenvolvimento/Docker/Volumes/MySql:/var/lib/mysql
+    networks:
+      - mysql-compose-network
+
+  mongo:
+    image: mongo
+    ports:
+    - "27017:27017"
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - mysql-compose-network
+
+networks: 
+  mysql-compose-network:
+    driver: bridge

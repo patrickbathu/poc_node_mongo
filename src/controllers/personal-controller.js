@@ -1,11 +1,11 @@
 'use strict';
 
-const repository = require('../repositories/livros-repository');
+const repository = require('../repositories/pessoa-media-repository');
 var config = require('../config');
 
 exports.post = async(req, res, next) => {
     try {
-        await repository.create(req.body);
+        await repository.create(re.body);
         res.status(201).send({
             message: 'Produto cadastrado com sucesso!'
         });

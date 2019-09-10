@@ -11,15 +11,15 @@ const schema = new Schema({
     },
     description: {
         type: String,
-        required: true
+        required: false
     },
     ano: {
         type: String,
-        required: true
+        required: false
     },
     image: {
         type: String,
-        required: true,
+        required: false,
         trim: true
     },
     __v:{

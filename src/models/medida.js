@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const medida = new Schema({
+const schema = new Schema({
     data: {
         type: String,
         required: true,
@@ -47,8 +47,7 @@ const medida = new Schema({
         type: String,
         required: false,
         trim: true
-    },
-    medida : {type: Schema.Types.ObjectId, ref: 'Medida'}
+    }
 });
 
-module.exports = mongoose.model('Medida', medida);
+module.exports = mongoose.model('Medida', schema);

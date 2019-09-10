@@ -19,6 +19,7 @@ const Livros = require('./models/livros');
 // Carrega as Rotas
 const indexRoute = require('./routes/index');
 const livroRoute = require('./routes/livro-route');
+const pessoaMedidaRoute = require('./routes/pessoa-medida-route');
 
 app.use(bodyParser.json({
 	limit: '5mb'
@@ -38,6 +39,7 @@ app.use(function (req, res, next) {
 //ROTAS
 app.use('/', indexRoute);
 app.use('/v1/livro', livroRoute);
+app.use('/v1/personal', pessoaMedidaRoute);
 
 module.exports = app;
 

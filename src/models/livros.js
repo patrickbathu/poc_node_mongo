@@ -21,11 +21,6 @@ const schema = new Schema({
         type: String,
         required: false,
         trim: true
-    },
-    __v:{
-        type: Number,
-        required: false,
-        trim: true
     }
 });
 

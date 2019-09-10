@@ -1,9 +1,9 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const Pessoa = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const schema = new Pessoa({
+const pessoa = new Schema({
     nome: {
         type: String,
         required: true,
@@ -29,10 +29,7 @@ const schema = new Pessoa({
         required: true,
         trim: true
     },
-    medidas: {
-        type: Medida,
-        required: false
-    }
+    pessoa: [{type: Schema.Types.ObjectId, ref: 'Pessoa'}]
 });
 
-module.exports = mongoose.model('Pessoa', schema);
+module.exports = mongoose.model('Pessoa', pessoa);

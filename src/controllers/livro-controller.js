@@ -5,12 +5,7 @@ var config = require('../config');
 
 exports.post = async(req, res, next) => {
     try {
-        await repository.create({
-            title: req.body.title,
-            description: req.body.description,
-            ano: req.body.ano,
-            image: 'https://nodestr.blob.core.windows.net/product-images/' + 'imagemteste.jpg' 
-        });
+        await repository.create(req.body);
         res.status(201).send({
             message: 'Produto cadastrado com sucesso!'
         });

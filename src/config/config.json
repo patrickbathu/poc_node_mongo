@@ -1,5 +1,5 @@
 {
     "firebase" : {
-        "livros" : "https://livros-firebase-66a75.firebaseio.com/livros.json"
+        "pessoa" : "https://livros-firebase-66a75.firebaseio.com/livros.json"
     }
 }

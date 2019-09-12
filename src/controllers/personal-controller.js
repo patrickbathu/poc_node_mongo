@@ -5,7 +5,7 @@ var config = require('../config');
 
 exports.post = async(req, res, next) => {
     try {
-        await repository.create(re.body);
+        await repository.create(req.body);;
         res.status(201).send({
             message: 'Produto cadastrado com sucesso!'
         });
@@ -19,9 +19,11 @@ exports.post = async(req, res, next) => {
 
 exports.get = async(req, res, next) => {
     try {
-        var data = await repository.get();
+        var data = await repository.get(req.params.id);
+        console.log(data)
         res.status(200).send(data);
     } catch (e) {
+        console.error(e)
         res.status(500).send({
             message: 'Falha ao processar sua requisição'
         });
@@ -30,7 +32,8 @@ exports.get = async(req, res, next) => {
 
 exports.put = async(req, res, next) => {
     try {
-        await repository.update(req.params.id, req.body);
+        console.log(req.body)  
+        await repository.update(req.body);
         res.status(200).send({
             message: 'Produto atualizado com sucesso!'
         });

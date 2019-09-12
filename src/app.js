@@ -15,6 +15,7 @@ mongoose.connect(config.connectionString);
 
 // Carrega os Models
 const Livros = require('./models/livros');
+const Pessoa = require('./models/pessoa');
 
 // Carrega as Rotas
 const indexRoute = require('./routes/index');

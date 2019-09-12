@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const schema = new Schema({
+const pessoa = new Schema({
     nome: {
         type: String,
         required: true,
@@ -20,15 +20,78 @@ const schema = new Schema({
         trim: true
     },
     peso: {
-        type: String,
+        type: Number,
         required: true,
         trim: true
     },
     imc: {
-        type: String,
-        required: true,
+        type: Number,
+        required: false,
         trim: true
-    }
+    },
+    medidas: [
+        {
+            data: {
+                type: String,
+                required: true,
+                trim: true
+            },
+            ombro: {
+                type: Number,
+                required: false
+            },
+            peito: {
+                type: Number,
+                required: false,
+                trim: true
+            },
+            cintura: {
+                type: Number,
+                required: false,
+                trim: true
+            },
+            abdomen: {
+                type: Number,
+                required: false,
+                trim: true
+            },
+            quadril: {
+                type: Number,
+                required: false,
+                trim: true
+            },
+            panturrilha_direita: {
+                type: Number,
+                required: false,
+                trim: true
+            },
+            panturrilha_esquerda: {
+                type: Number,
+                required: false,
+                trim: true
+            },
+            coxa_direita: {
+                type: Number,
+                required: false,
+                trim: true
+            },
+            coxa_esquerda: {
+                type: Number,
+                required: false,
+                trim: true
+            },
+            braco_direito: {
+                type: Number,
+                required: false,
+                trim: true
+            },
+            braco_esquerdo: {
+                type: Number,
+                required: false,
+                trim: true
+            }
+        }
+    ]
 });
 
-module.exports = mongoose.model('Pessoa', schema);
+module.exports = mongoose.model('Pessoa', pessoa);

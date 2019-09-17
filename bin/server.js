@@ -1,5 +1,7 @@
 'use strict'
 
+const schedule = require('node-schedule');
+
 /**/ 
 const http = require('http');
 /** */
@@ -13,6 +15,7 @@ const bodyParser = require('body-parser');
 const app = require('../src/app')
 
 const port = '3000';
+
 
 app.listen(port, function(){
     console.log('app rodando na porta 3000');

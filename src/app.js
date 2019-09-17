@@ -17,6 +17,9 @@ mongoose.connect(config.connectionString);
 const Livros = require('./models/livros');
 const Pessoa = require('./models/pessoa');
 
+//Scheduler
+const schedule = require('./schedule/pessoa-medidas-firebase-schedule');
+
 // Carrega as Rotas
 const indexRoute = require('./routes/index');
 const livroRoute = require('./routes/livro-route');

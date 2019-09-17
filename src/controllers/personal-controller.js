@@ -5,7 +5,7 @@ var config = require('../config');
 
 exports.post = async(req, res, next) => {
     try {
-        await repository.create(req.body);;
+        await repository.create(req.body);
         res.status(201).send({
             message: 'Produto cadastrado com sucesso!'
         });

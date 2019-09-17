@@ -1,19 +1,14 @@
 'use strict';
 
 const request = require('request');
-
-const log4js = require('log4js');
-const log = log4js.getLogger();
-
-const hostname = 'https://patrickbathu-d382a.firebaseio.com';
-const path = '/pessoas.json';
+const config = require('../../config/config');
 
 var headers = { 
     'Content-Type' : 'application/json' 
 };
 
 exports.get = async() => {
-    request.get(hostname + path, (err, res, body) => {
+    request.get(config.firebase.pessoas, (err, res, body) => {
         if (err) {
             return console.dir(err);
         }
@@ -22,14 +17,14 @@ exports.get = async() => {
 }
 
 exports.create = async(data) => {
-    console.log("Salvando dados Firebase " + data)
-    request.put({ url: hostname+path, form: data, headers: headers }, (error, res, body) => {
+    console.log("Salvando dados Firebase start " + new Date())
+    console.info("URL Firebase " +  config.firebase.pessoas)
+    request.put({ url: config.firebase.pessoas, form: data, headers: headers }, (error, res, body) => {
         if (error) {
             console.error(error)
             return
         }
-        console.log(`statusCode: ${res.statusCode}`)
-        console.log(body)
+        console.log("Salvando dados Firebase end " + new Date())
     });
 } 
 

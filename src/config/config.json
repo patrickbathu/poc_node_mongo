@@ -1,5 +1,8 @@
 {
     "firebase" : {
-        "pessoa" : "https://livros-firebase-66a75.firebaseio.com/livros.json"
+        "pessoas" : "https://patrickbathu-d382a.firebaseio.com/pessoas.json"
+    },
+    "scheduler" : {
+        "pessoaMedida" : "0 * * * * *"
     }
 }

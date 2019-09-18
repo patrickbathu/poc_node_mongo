@@ -1,7 +1,6 @@
 'use strict';
 
 const repository = require('../repositories/livros-repository');
-var config = require('../config');
 
 exports.post = async(req, res, next) => {
     try {

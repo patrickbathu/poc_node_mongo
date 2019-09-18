@@ -1,7 +1,6 @@
 'use strict';
 
 const repository = require('../repositories/pessoa-media-repository');
-var config = require('../config');
 
 exports.post = async(req, res, next) => {
     try {
@@ -33,7 +32,6 @@ exports.get = async(req, res, next) => {
 exports.getAll = async(req, res, next) => {
     try {
         var data = await repository.getAll();
-        console.log(data)
         res.status(200).send(data);
     } catch (e) {
         console.error(e)

@@ -4,14 +4,14 @@ const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 
-const config = require('./config');
+const config = require('./config/config');
 
 const app = express();
 
 const routes = express.Router();
 
 // Connecta ao banco
-mongoose.connect(config.connectionString);
+mongoose.connect(config.mongo.connectionString);
 
 // Carrega os Models
 const Livros = require('./models/livros');

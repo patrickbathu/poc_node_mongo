@@ -1,4 +1,7 @@
 {
+    "mongo" : {
+        "connectionString" : "mongodb://system:system*123@ds231377.mlab.com:31377/heroku_8b08fdtz"
+    },
     "firebase" : {
         "pessoas" : "https://patrickbathu-d382a.firebaseio.com/pessoas.json"
     },

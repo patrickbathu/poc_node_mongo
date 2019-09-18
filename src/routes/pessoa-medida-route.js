@@ -6,6 +6,7 @@ const controller = require('../controllers/personal-controller');
 
 router.post('/', controller.post);
 router.get('/:id', controller.get);
+router.get('/', controller.getAll);
 router.put('/', controller.put);
 router.delete('/', controller.delete);
 

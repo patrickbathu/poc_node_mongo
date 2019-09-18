@@ -30,6 +30,19 @@ exports.get = async(req, res, next) => {
     }
 }
 
+exports.getAll = async(req, res, next) => {
+    try {
+        var data = await repository.getAll();
+        console.log(data)
+        res.status(200).send(data);
+    } catch (e) {
+        console.error(e)
+        res.status(500).send({
+            message: 'Falha ao processar sua requisição'
+        });
+    }
+}
+
 exports.put = async(req, res, next) => {
     try {
         console.log(req.body)  

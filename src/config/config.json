@@ -6,6 +6,7 @@
         "pessoas" : "https://patrickbathu-d382a.firebaseio.com/pessoas.json"
     },
     "scheduler" : {
-        "pessoaMedida" : "0 * * * * *"
+        "pessoaMedida" : "* * 20 0 * *",
+        "ativo" : true
     }
 }

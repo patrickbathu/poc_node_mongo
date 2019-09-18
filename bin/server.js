@@ -14,9 +14,10 @@ const bodyParser = require('body-parser');
 /** */
 const app = require('../src/app')
 
-const port = '3000';
+const PORT = process.env.PORT || 3000;
 
+app.use(express.static(__dirname + "/public"));
 
-app.listen(port, function(){
-    console.info('app rodando na porta 3000');
+app.listen(PORT, function(){
+    console.info('app rodando na porta ' + PORT);
 });
